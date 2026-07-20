@@ -6,12 +6,24 @@ import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
+import { exec } from "child_process";
 import { fortuneBazi } from "./tools/bazi.js";
 import { fortuneLiuyao } from "./tools/liuyao.js";
 import { fortuneQian } from "./tools/qian.js";
 import { fortuneName } from "./tools/name.js";
 import { fortuneMingming } from "./tools/mingming.js";
 import { fortuneCoder } from "./tools/coder.js";
+
+function openBrowser(filePath: string): void {
+  const cmd = process.platform === "win32"
+    ? `start "" "${filePath}"`
+    : process.platform === "darwin"
+      ? `open "${filePath}"`
+      : `xdg-open "${filePath}"`;
+  exec(cmd, (err) => {
+    if (err) console.error("打开浏览器失败:", err.message);
+  });
+}
 
 const server = new Server(
   {
@@ -149,11 +161,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         throw new Error(`未知工具: ${name}`);
     }
 
+    openBrowser(result.htmlPath);
+
     return {
       content: [
         {
           type: "text",
-          text: `✨ ${result.summary}\n\n📄 水墨命理页面已生成：${result.htmlPath}\n请用浏览器打开查看完整命理分析。`,
+          text: `✨ ${result.summary}\n\n📄 水墨命理页面已生成：${result.htmlPath}`,
         },
       ],
     };
