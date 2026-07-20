@@ -1,0 +1,24 @@
+{
+  "name": "suanming-mcp",
+  "version": "1.0.0",
+  "description": "传统中国风算命 MCP Server - 八字、六爻、抽签、姓名打分、起名、程序员黄历",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "suanming-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js"
+  },
+  "keywords": ["mcp", "fortune-telling", "suanming", "chinese", "八字", "算命"],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
