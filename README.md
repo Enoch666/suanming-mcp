@@ -73,6 +73,32 @@ npm install -g suanming-mcp
 
 发布后玩家只需一行命令，无需克隆仓库。
 
+### 本地克隆（无需 npm 发布）
+
+如果还没发布到 npm，或者想用最新代码，直接克隆本地使用：
+
+```bash
+git clone https://github.com/Enoch666/suanming-mcp.git
+cd suanming-mcp
+npm install
+npm run build
+```
+
+然后在 `.mcp.json` 中指向本地 `dist/index.js`：
+
+```json
+{
+  "mcpServers": {
+    "suanming": {
+      "command": "node",
+      "args": ["克隆目录的完整路径/dist/index.js"]
+    }
+  }
+}
+```
+
+> **注意**：`args` 里要写你电脑上的**绝对路径**，比如 `D:/workspace/study/算命/dist/index.js`。Windows 用正斜杠 `/`，不要用反斜杠 `\`。
+
 ## ⚙️ 配置
 
 ### Claude Code
