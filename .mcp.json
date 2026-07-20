@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "suanming": {
-      "command": "node",
-      "args": ["D:/workspace/study/算命/dist/index.js"]
-    }
-  }
-}
