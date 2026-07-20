@@ -57,11 +57,20 @@ HTML 文件保存在 `~/.suanming/` 目录下。
 ### 八字排盘
 ![八字排盘](./assets/screenshot-bazi.png)
 
-### 程序员黄历
-![程序员黄历](./assets/screenshot-coder.png)
+### 六爻起卦
+![六爻起卦](./assets/screenshot-liuyao.png)
 
 ### 灵签抽签
 ![抽签](./assets/screenshot-qian.png)
+
+### 起名
+![起名](./assets/screenshot-mingming.png)
+
+### 姓名打分
+![姓名打分](./assets/screenshot-name.png)
+
+### 程序员黄历
+![程序员黄历](./assets/screenshot-coder.png)
 
 *更多截图见 [assets/](./assets/) 目录*
 
